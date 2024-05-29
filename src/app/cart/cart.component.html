@@ -1,0 +1,45 @@
+<head>
+  <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<section>
+  <div class="shopping-cart">
+    <!-- Title -->
+    <div class="title">
+      Shopping Cart
+    </div>
+
+    <!-- Display Cart Items Dynamically -->
+    <div class="item" *ngFor="let product of cart">
+      <div class="buttons">
+        <span class="delete-btn" (click)="deleteToCart(product.id)"><i class="fa-solid fa-x"></i></span>
+        <span class="like-btn"></span>
+      </div>
+
+      <div class="image">
+        <img [src]="'assets/'+product.imageUrl" alt="" />
+      </div>
+      <div class="name">
+        <span>{{ product.name }}</span>
+      </div>
+
+      <div class="description">
+        <span>{{ product.description }}</span>
+      </div>
+
+      <div class="quantity">
+        <button class="minus-btn" type="button" name="button" (click)="decreaseQuantity(quantityInput)">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <input class="inputName" type="text" name="name" [readonly]="true"  #quantityInput value="1">
+        <button class="plus-btn" type="button" name="button" (click)="increaseQuantity(quantityInput)">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+
+      <div class="total-price">{{ product.price | currency }}</div>
+    </div>
+  </div>
+
+</section>

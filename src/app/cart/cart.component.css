@@ -1,0 +1,229 @@
+section{
+  width: 100%;
+  min-height: 60.5vh;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+
+}
+.shopping-cart {
+  width: 1050px;
+  height: auto;
+  margin: 80px auto;
+  background: #e0dede;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.10);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  height: 60px;
+  border-bottom: 1px solid #E1E8EE;
+  padding: 20px 30px;
+  color: #5E6977;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.item {
+  padding: 20px 30px;
+  height: 150px;
+  position: relative;
+  display: flex;
+  transition: background-color 0.3s ease;
+}
+
+.item:hover {
+  background: linear-gradient(to top, #c7a2bb, #c8c2ce);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 60px;
+}
+
+.delete-btn,
+.like-btn {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.delete-btn {
+  width: 18px;
+  height: 17px;
+}
+
+.like-btn {
+  width: 60px;
+  height: 60px;
+  background: url('/assets/image/twitter-heart.png');
+  background-size: 2900%;
+  background-repeat: no-repeat;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  overflow: hidden; /* Đảm bảo ảnh không vượt quá khung hình */
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto; /* Để ảnh hiển thị ở giữa */
+}
+.name{
+  font-weight: bold;
+  height: 50px;
+  color: black;
+  position: absolute;
+  left: 400px;
+  top: 20px;
+}
+.description{
+  width: 300px;
+  text-align: left;
+  position: absolute;
+  left: 400px;
+  top: 50px;
+}
+.quantity {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 400px;
+  top: 100px;
+}
+
+.quantity button {
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0;
+  padding: 5px;
+}
+
+.quantity input {
+  -webkit-appearance: none;
+  border: none;
+  text-align: center;
+  width: 32px;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+  margin: 0 5px;
+}
+
+.quantity input:focus {
+  outline: none;
+  border: 1.5px solid #1A73E8;
+}
+
+.quantity button.plus-btn,
+.quantity button.minus-btn {
+  width: 25px;
+  height: 25px;
+  background-color: #E1E8EE;
+  border-radius: 4px;
+}
+
+.quantity button.plus-btn {
+  margin-left: 5px;
+}
+
+.quantity button.minus-btn img,
+.quantity button.plus-btn img {
+  margin: 0;
+}
+
+.total-price {
+  width: auto;
+  text-align: center;
+  margin: 6px 0;
+  position: absolute;
+  right: 100px;
+  top: 10px;
+}
+
+.quantity input {
+  width: 32px;
+  text-align: center;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+  margin: 0 4px;
+}
+
+.total-price {
+  width: 83px;
+  padding-top: 27px;
+  text-align: center;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
+.inputName {
+  width: 50px; /* Đặt chiều rộng theo ý muốn */
+  height: 30px; /* Đặt chiều cao theo ý muốn */
+  padding: 5px; /* Đặt khoảng trắng bên trong theo ý muốn */
+  box-sizing: border-box; /* Đảm bảo rằng kích thước không bao gồm padding và biên */
+}
+
+/* Màu sắc và đường viền */
+.inputName {
+  border: 1px solid #ccc; /* Đặt đường viền */
+  border-radius: 4px; /* Đặt góc bo tròn */
+  background-color: #fff; /* Đặt màu nền */
+  color: #333; /* Đặt màu văn bản */
+}
+
+/* Hiệu ứng khi tương tác */
+.inputName:focus {
+  outline: none; /* Loại bỏ đường viền khi tương tác */
+  border-color: #4CAF50; /* Đặt màu đường viền khi được chọn */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Đặt đổ bóng khi được chọn */
+}
+
+/* Kiểu chữ và căn lề */
+.inputName {
+  font-size: 14px; /* Đặt kích thước chữ */
+  text-align: center; /* Đặt căn lề văn bản */
+  font-family: Arial, sans-serif; /* Đặt font chữ */
+}
+
+@media (max-width: 800px) {
+  .shopping-cart {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .item {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .image,
+  .quantity,
+  .description {
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+  }
+
+  .buttons {
+    margin-right: 20px;
+  }
+}
