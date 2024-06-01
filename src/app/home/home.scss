@@ -1,11 +1,12 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
 
 }
-section{
+
+section {
   width: 100%;
   height: 90vh;
   background-image: url(/assets/image/nikeanimation.gif);
@@ -16,11 +17,13 @@ section{
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
 
 }
-section .main{
+
+section .main {
   width: 100%;
   height: 100%;
 }
-section .main_content{
+
+section .main_content {
   display: flex;
   width: 100%;
   align-items: center;
@@ -28,7 +31,7 @@ section .main_content{
   /*justify-content: space-around;*/
 }
 
-section .main_content .main_text h1{
+section .main_content .main_text h1 {
   font-size: 60px;
   line-height: 70px;
   font-family: pyxidium quick;
@@ -41,7 +44,7 @@ section .main_content .main_text h1{
   left: 50px;
 }
 
-section .main_content .main_text h1 span{
+section .main_content .main_text h1 span {
   font-size: 60px;
   /*background: linear-gradient(to right, #c72092,#6c14d0);*/
   background: linear-gradient(to right, #cec1c7, #ffffff);
@@ -49,7 +52,7 @@ section .main_content .main_text h1 span{
   -webkit-text-fill-color: transparent;
 }
 
-section .main_content .main_text p{
+section .main_content .main_text p {
   width: 600px;
   text-align: justify;
   line-height: 21px;
@@ -60,59 +63,89 @@ section .main_content .main_text p{
   left: 50px;
 }
 
-section .main_content .main_image img{
+section .main_content .main_image img {
   width: 650px;
   position: relative;
   left: 20px;
   top: 75px;
 }
 
-section .social_icon{
+section .social_icon {
   position: absolute;
   top: 50%;
   left: 98%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   font-size: 19px;
 }
 
-section .main .social_icon i{
+section .main .social_icon i {
   margin: 8px 0;
   cursor: pointer;
   transition: 0.3s;
 }
 
-section .main .social_icon i:hover{
+section .main .social_icon i:hover {
   color: #c72092;
 }
 
-section .button{
+section button {
   position: absolute;
   left: 50px;
-  width: 300px;
-  padding: 10px 20px;
-  /*bottom: 250px;*/
   top: 470px;
-  border-radius: 30px;
-  background: linear-gradient(to right,#c72092 , #6c14d0);
 }
 
-section .main_content .button a{
-  color: white;
-  width: 100%;
-  text-decoration: none;
+button {
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: hsl(255deg 50% 40%);
+  border: solid 4px #c72092;
+  font-family: inherit;
 }
 
-section .main_content .button i{
-  color: white;
-  margin-left: 5px;
-  transition: 0.3s;
-
-  animation: arrowAnimation 1.5s infinite alternate; /* Keyframes animation */
+.default-btn,
+.hover-btn {
+  background-color: hsl(255deg 50% 40%);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all .3s ease;
 }
 
-section .main_content .button:hover i{
-  transform: translateX(6px);
+.hover-btn {
+  position: absolute;
+  inset: 0;
+  background-color: hsl(255deg 50% 49%);
+  transform: translate(0%, 100%);
 }
+
+.default-btn span {
+  color: hsl(0, 0%, 100%);
+}
+
+.hover-btn span {
+  color: hsl(50deg 100% 50%);
+}
+
+button:hover .default-btn {
+  transform: translate(0%, -100%);
+}
+
+button:hover .hover-btn {
+  transform: translate(0%, 0%);
+}
+
 @keyframes arrowAnimation {
   to {
     transform: translate(170px) translate(-50%);

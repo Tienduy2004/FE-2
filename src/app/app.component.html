@@ -9,22 +9,31 @@
       <h1>Shoe<span>s</span></h1>
     </div>
     <ul>
-      <li><a routerLink="/" fragment="Home">Home</a></li>
-      <li><a routerLink="/" fragment="Products">Products</a></li>
-      <li><a routerLink="/" fragment="About">About</a></li>
-      <li><a href="#Review">Review</a></li>
-      <li><a href="#Servises">Servises</a></li>
+      <li><a routerLink="/" fragment="Home">Home <span></span></a></li>
+      <li><a routerLink="/" fragment="Products">Products <span></span></a></li>
+      <li><a routerLink="/" fragment="About">About <span></span></a></li>
+      <li><a href="#Review">Review <span></span></a></li>
+      <li><a href="#Servises">Servises <span></span></a></li>
     </ul>
     <div class="icons">
       <a routerLink="/cart"><i class="fa-solid fa-heart black-icon"></i></a>
       <a routerLink="/cart"><i class="fa-solid fa-cart-shopping black-icon" ></i></a>
       <a (click)="toggleUserOptions()"><i class="fa-solid fa-user black-icon"></i></a>
+      <div class="toggle-btn" (click)="toggleDropdown()">
+        <i class="fa-solid fa-bars" [ngClass]="{'fa-xmark': dropdownOpen, 'fa-bars': !dropdownOpen}"></i>
+      </div>
       <app-user-options *ngIf="showUserOptions"></app-user-options>
 
     </div>
+    <div class="dropdown-menu" [ngClass]="{'open': dropdownOpen}">
+      <li><a routerLink="/" fragment="Home">Home</a></li>
+      <li><a routerLink="/" fragment="Products">Products</a></li>
+      <li><a routerLink="/" fragment="About">About</a></li>
+      <li><a href="#Review">Review</a></li>
+      <li><a href="#Servises">Servises</a></li>
+    </div>
   </nav>
-
-</div>
+ 
 <router-outlet></router-outlet>
 
 <footer>
@@ -72,5 +81,7 @@
 
   </div>
 </footer>
+
+
 
 

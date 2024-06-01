@@ -4,6 +4,7 @@ import {CommonModule} from "@angular/common";
 import {Product} from "../product";
 import {ProductService} from "../product.service";
 import {AboutComponent} from "../about/about.component";
+import AOS from 'aos';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,9 @@ import {AboutComponent} from "../about/about.component";
 })
 export class HomeComponent {
 
+  constructor() {}
 
-
+  ngOnInit(){
+    AOS.init();
+  }
 }

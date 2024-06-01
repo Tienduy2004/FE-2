@@ -39,26 +39,46 @@
 .nav-section nav ul li{
   display: inline-block;
   margin: 5px 15px;
+  position: relative;
 }
 
-.nav-section nav ul li a{
+.nav-section nav li a{
   text-decoration: none;
   color: black;
   transition: 0.2s;
 }
 
-.nav-section nav ul li a:hover{
+.nav-section nav li a:hover{
   color: #c72092;
 }
-
-.nav-section nav .icons a i{
-  margin: 0 4px;
+.nav-section nav .icons{
+  display: flex;
+}
+.nav-section nav .icons i{
+  margin: 0 8px;
   cursor: pointer;
   font-size: 18px;
   transition: 0.3s;
 }
+
 .black-icon {
   color: black;
+}
+.nav-section nav li a span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-bottom: 2px solid #c72092;
+  transform: scale(0) translateY(50px);
+  opacity: 0;
+  transition: .5s;
+}
+.nav-section nav li a:hover span {
+  transform: scale(1) translateY(0);
+  opacity: 1;
 }
 
 .nav-section nav .icons i:hover{
@@ -82,9 +102,6 @@ footer .footer_main .tag{
   margin: 10px 0;
 }
 
-footer .footer_main .tag .center{
-  text-align: center;
-}
 
 footer .footer_main .tag h1{
   font-size: 25px;
@@ -183,3 +200,62 @@ footer .footer_main .tag .search_bar button{
   cursor: pointer;
 }
 
+/* DROPMENU */
+.toggle-btn{
+  display: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.dropdown-menu{
+  display: none;
+  position: absolute;
+  right: 2em;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown-menu.open{
+  height: 240px;
+}
+.dropdown-menu li{
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media(max-width: 992px){
+  .nav-section nav {
+    justify-content: space-between; 
+    padding: 10px 20px; 
+  }
+  .nav-section nav .logo {
+    font-size: 28px; 
+    left: 0; 
+  }
+  nav ul{
+    display: none;
+  }
+  nav .toggle-btn{
+    display: block;
+  }
+  .dropdown-menu{
+    display: block;
+  }
+  footer .footer_main {
+    flex-direction: column;
+  }
+  
+  footer .footer_main .tag {
+    margin: 5px 0; 
+  }
+  
+  footer .footer_main .tag .search_bar {
+    margin-top: 10px;
+  }
+}

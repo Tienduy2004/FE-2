@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-about',
@@ -13,4 +14,10 @@ export class AboutComponent {
   changeImage(imageSource: string): void{
     this.selectedImage = imageSource;
   }
+  constructor() {}
+
+  ngOnInit(){
+    AOS.init();
+  }
 }
+
