@@ -7,9 +7,10 @@
 }
 
 section {
-  width: 100%;
+  margin: 150px 50px 50px;
+  width: 90%;
   height: 90vh;
-  background-image: url(/assets/image/nikeanimation.gif);
+  background-image: url(/assets/image/contet.png);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -40,7 +41,7 @@ section .main_content .main_text h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
-  top: 200px;
+  top: 50px;
   left: 50px;
 }
 
@@ -59,7 +60,7 @@ section .main_content .main_text p {
   position: relative;
   color: white;
   font-size: 12px;
-  top: 200px;
+  top: 50px;
   left: 50px;
 }
 
@@ -91,7 +92,7 @@ section .main .social_icon i:hover {
 section button {
   position: absolute;
   left: 50px;
-  top: 470px;
+  top: 60%;
 }
 
 button {
@@ -151,3 +152,17 @@ button:hover .hover-btn {
     transform: translate(170px) translate(-50%);
   }
 }
+.shoe-viewer {
+  width: 30%; /* Điều chỉnh kích thước cho phù hợp với nội dung */
+  height: 100%; /* Điều chỉnh kích thước cho phù hợp với nội dung */
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  right: 10px;
+  padding-top: 100px;
+}
+canvas{
+  width: 100%;
+  height: 50%;
+}
+
